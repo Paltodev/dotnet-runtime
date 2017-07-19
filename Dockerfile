@@ -17,14 +17,12 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
 
 # install dotnet
 RUN apt-get update
-RUN apt-get install -y dotnet-dev-1.0.4
+RUN apt-get install -y dotnet-sdk-2.0.0-preview2-006497
 
 # first run (populate cache)
 RUN mkdir warmup \
     && cd warmup \
-    && dotnet new \
+    && dotnet new classlib \
     && cd .. \
     && rm -rf warmup \
     && rm -rf /tmp/NuGetScratch
-
-RUN pip install awscli
