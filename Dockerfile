@@ -17,7 +17,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
 
 # install dotnet
 RUN apt-get update
-RUN apt-get install -y dotnet-sdk-2.0.0-preview2-006497
+RUN apt-get install -y dotnet-sdk-2.0.0
 
 # first run (populate cache)
 RUN mkdir warmup \
